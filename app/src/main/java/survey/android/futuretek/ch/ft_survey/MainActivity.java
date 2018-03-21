@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    // bug place
     protected void onResume() {
         super.onResume();
         nextBtn.setTextColor(Color.GRAY);
@@ -84,7 +85,7 @@ public class MainActivity extends BaseActivity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    if (userName == null || userName.isEmpty()) {
+                    if ( (userName == null) || (userName.isEmpty()) ) {
                         List<String> textArray = new ArrayList<String>(1);
                         textArray.add("Didn't get your name...");
                         animateText(textArray, new AnimationListDone() {
