@@ -43,17 +43,15 @@ public class AboutFTActivity extends BaseActivity {
         List<String> textArray;
 
         textArray = new ArrayList<>();
-        textArray.add("Futuretek is growing and growing!");
-        textArray.add("The goal for the developer section is to bring the best people together and to build incredible things.");
-        if(userName!=null)
-            textArray.add(userName);
-        textArray.add("Do you think you are one of them?");
-        textArray.add("Tell us more about what you know.");
+        textArray.add("I code mainly C, Go and Python nowdays");
+        textArray.add("Writing user interface is cumbersome because of complex objects hierarchy..");
+        textArray.add("Thanks for this 3 hours fun with Android Studio :)");
+   //     textArray.add("Tell us more about what you know.");
         animateText(textArray, new AnimationListDone() {
             public void done() {
-                Button nextBtn = ((Button) findViewById(R.id.nextBtn));
-                nextBtn.setTextColor(Color.GREEN);
-                nextBtn.setEnabled(true);
+                //Button nextBtn = ((Button) findViewById(R.id.nextBtn));
+                //nextBtn.setTextColor(Color.GREEN);
+                //nextBtn.setEnabled(true);
             }
         });
     }

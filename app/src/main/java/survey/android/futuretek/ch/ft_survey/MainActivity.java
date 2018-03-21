@@ -64,8 +64,10 @@ public class MainActivity extends BaseActivity {
         }else{
             textArray = new ArrayList<>(3);
             textArray.add("Hi there!");
-            textArray.add("This is the survey of Futuretek.");
-            textArray.add("What's your name?");
+            textArray.add("My name is Slavik..");
+            textArray.add("Nice to meet you!");
+            textArray.add("I was asked to fix this survey");
+            textArray.add("My Java is very rusty so half way through I gave up ))");
 
             animateText(textArray, new AnimationListDone() {
                             public void done() {
