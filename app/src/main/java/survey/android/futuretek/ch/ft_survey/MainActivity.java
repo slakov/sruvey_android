@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
         View mainTextView = findViewById(R.id.textLayout);
         mainTextView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                requestUserName();
+                //requestUserName();
             }
         });
 
@@ -66,48 +66,55 @@ public class MainActivity extends BaseActivity {
             textArray.add("Hi there!");
             textArray.add("This is the survey of Futuretek.");
             textArray.add("What's your name?");
+
             animateText(textArray, new AnimationListDone() {
-                public void done() {
-                    requestUserName();
-                }
-            });
+                            public void done() {
+                                activateNextButton();
+                            }
+                        });
+
+
+
         }
     }
 
-    private void requestUserName(){
-        if(userName==null){
-            openInputDialog(new View.OnClickListener() {
-                public void onClick(View v) {
-                    EditText userInput = ((EditText) v.findViewById(R.id.userInput));
-                    userName = null;
-                    try {
-                        userName = getDatabase().get("usersName");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    if ( (userName == null) || (userName.isEmpty()) ) {
-                        List<String> textArray = new ArrayList<String>(1);
-                        textArray.add("Didn't get your name...");
-                        animateText(textArray, new AnimationListDone() {
-                            public void done() {
-                                activateNextButton();
-                            }
-                        });
-                    } else {
-                        getDatabase().put("usersName", userName);
-                        List<String> textArray = new ArrayList<String>(2);
-                        textArray.add("Ah, nice.");
-                        textArray.add("Hi " + userName + "!");
-                        animateText(textArray, new AnimationListDone() {
-                            public void done() {
-                                activateNextButton();
-                            }
-                        });
-                    }
-                }
-            });
-        }
-    }
+//    private void requestUserName(){
+//        if(userName == null){
+//            openInputDialog(new View.OnClickListener() {
+//                public void onClick(View v) {
+//
+//                    EditText userInput = ((EditText) v.findViewById(R.id.userInput));
+//                    userName = null;
+//
+//                    try {
+//                        userName = getDatabase().get("usersName");
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                    if ( (userName == null) || (userName.isEmpty()) ) {
+//                        List<String> textArray = new ArrayList<String>(1);
+//                        textArray.add("Didn't get your name...");
+//                        animateText(textArray, new AnimationListDone() {
+//                            public void done() {
+//                                activateNextButton();
+//                            }
+//                        });
+//                    } else {
+//                        getDatabase().put("usersName", userName);
+//                        List<String> textArray = new ArrayList<String>(2);
+//                        textArray.add("Ah, nice.");
+//                        textArray.add("Hi " + userName + "!");
+//                        animateText(textArray, new AnimationListDone() {
+//                            public void done() {
+//                                activateNextButton();
+//                            }
+//                        });
+//                    }
+//                }
+//            });
+//        }
+//    }
 
     private void activateNextButton(){
         Button nextBtn = ((Button) findViewById(R.id.nextBtn));
